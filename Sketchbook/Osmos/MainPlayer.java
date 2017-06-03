@@ -8,7 +8,7 @@ public class MainPlayer implements Players{
        public MainPlayer(){
 	speed = 9;
 	
-    }
+       }
 
     public int getX(){
 	return xcor;
@@ -27,10 +27,12 @@ public class MainPlayer implements Players{
     }
 
     public void eat(Players x){
-	
-	int amount = x.getSize();
-	size += amount/2;
-	speed -= amount/5;
+	if (isBigger){
+	    int amount = x.getSize();
+	    size += amount/2;
+	    speed -= amount/5;}
+
+	else{die();}
     }
 	
     public void moveTo (int x, int y){
@@ -41,6 +43,16 @@ public class MainPlayer implements Players{
     public void die(){
     }
 
+    public boolean isBigger(EnemiesPlayer x){
+	int sizeup =  x.getSize();
+	if (sizeup < size){ return true;}
+	return false;
+    }
+
+    public boolean nearMe(){
+	return false;
+    }
+    
 
     
 
