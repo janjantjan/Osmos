@@ -38,8 +38,8 @@ public class MainPlayer implements Players{
 
     public void eat(Players x){
 	if (isBigger(x)){
-	    double amount = x.getSize();
-	    size += amount/2;
+	    double amount = x.getRadius();
+	    radius += amount/2;
 	    speed -= amount/5;}
 
 	else{die();}
@@ -68,8 +68,8 @@ public class MainPlayer implements Players{
     }
 
     public boolean isBigger(Players x){
-	double sizeup =  x.getSize();
-	if (sizeup < size){ return true;}
+	double sizeup =  x.getRadius();
+	if (sizeup < radius){ return true;}
 	return false;
     }
 

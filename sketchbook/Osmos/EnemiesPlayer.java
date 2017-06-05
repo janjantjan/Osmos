@@ -10,7 +10,7 @@ public class EnemiesPlayer implements Players{
 
     public EnemiesPlayer(){
 	speed = 2.5;//start at two decrease by 0.05
-	size = 10;
+	radius = 10;
 	xcor = 50;//to be changed
 	ycor = 50;//to be changed
 	alive = true;
@@ -41,8 +41,8 @@ public class EnemiesPlayer implements Players{
 
     public void eat(Players x){
 	if (isBigger(x)){
-	    double amount = x.getSize();
-	    size += amount;
+	    double amount = x.getRadius();
+	    radius += amount;
 	    speed -= 0.05;}
 	else{die();}
     }
@@ -70,8 +70,8 @@ public class EnemiesPlayer implements Players{
     }
 
     public boolean isBigger(Players x){
-	double sizeup =  x.getSize();
-	if (sizeup < size){ return true;}
+	double sizeup =  x.getRadius();
+	if (sizeup < radius){ return true;}
 	return false;
     }
     
