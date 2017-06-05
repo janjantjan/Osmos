@@ -1,7 +1,7 @@
 public class EnemiesPlayer implements Players{
 
     private double speed;
-    private double size;
+    private double radius;
     private int xcor;
     private int ycor;
     private boolean alive;
@@ -10,7 +10,7 @@ public class EnemiesPlayer implements Players{
 
     public EnemiesPlayer(){
 	speed = 2.5;//start at two decrease by 0.05
-	size = .5;
+	size = 10;
 	xcor = 50;//to be changed
 	ycor = 50;//to be changed
 	alive = true;
@@ -31,8 +31,8 @@ public class EnemiesPlayer implements Players{
 	return ycor;
     }
 
-    public double getSize(){
-	return size;
+    public double getRadius(){
+	return radius;
     }
 
     public double getSpeed(){

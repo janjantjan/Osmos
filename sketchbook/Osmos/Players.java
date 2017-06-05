@@ -5,7 +5,7 @@ public interface Players{
     public void die ();
     public int getX();
     public int getY();
-    public double getSize();
+    public double getRadius();
     public double getSpeed();
     public int getSection();
     public boolean isAlive();
