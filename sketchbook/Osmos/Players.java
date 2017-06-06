@@ -1,6 +1,6 @@
 public interface Players{
 
-    public void eat (Players x);
+    public Players eat (Players x);
     public void moveTo (int x, int y);
     public void die ();
     public int getX();

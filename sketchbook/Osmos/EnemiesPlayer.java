@@ -48,12 +48,15 @@ public class EnemiesPlayer implements Players{
 	return speed;
     }
 
-    public void eat(Players x){
+    public Players eat(Players x){
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount;
-	    speed -= 0.05;}
-	else{die();}
+	    speed -= 0.05;
+	    return x;
+	}
+	else{die();
+	    return x;}
     }
 	
     public void moveTo (int x, int y){

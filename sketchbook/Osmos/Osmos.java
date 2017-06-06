@@ -3,15 +3,14 @@ import java.lang.*;
 
 public class Osmos{
     MainPlayer main = new MainPlayer();
-    ArrayList<EnemiesPlayer>  enemiesAry = new ArrayList<EnemiesPlayer>();
+    ArrayList<Players>  enemiesAry = new ArrayList<Players>();
     
     
-    public void addEnemy(){
-	EnemiesPlayer x = new EnemiesPlayer();
+    public void addAry(Players x){
 	enemiesAry.add(x);
     }
 
-    public void removeEnemy(EnemiesPlayer x){
+    public void removeEnemy(Players x){
 	enemiesAry.remove(x);
     }
 

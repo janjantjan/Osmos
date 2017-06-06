@@ -37,13 +37,19 @@ public class MainPlayer implements Players{
     public double getSpeed(){
 	return speed;}
 
-    public void eat(Players x){
+    public Players eat(Players x){
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount/2;
-	    speed -= amount/5;}
+	    speed -= amount/5;
+	    x.die();
+	    return x;
+	}
 
-	else{die();}
+	else{
+	    die();
+	    return x;
+	}
     }
 	
      public void moveTo (int x, int y){
