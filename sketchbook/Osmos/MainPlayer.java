@@ -1,3 +1,4 @@
+
 public class MainPlayer implements Players{
 
     private double speed;
@@ -45,26 +46,40 @@ public class MainPlayer implements Players{
 	else{die();}
     }
 	
-    public void moveTo (int x, int y){//fix later
+     public void moveTo (int x, int y){
 	xcor = x;
 	ycor = y;
-	if ((x<50) && (y<50)){
+	if ((x<=400) && (y<=500)){
 	    section = 1;
 	}
-	else if ((x<100) && (y<50)){
+	else if ((x<=800) && (y<=500)){
 	    section = 2;
 	}
-	else if ((x<50) && (y<100)){
+	else if ((x<=400) && (y<=1000)){
 	    section = 3;
 	}
-	else if ((x<100) && (y<100)){
+	else if ((x<=1200) && (y<500)){
 	    section = 4;
 	}
+	else if ((x<=1200) && (y<500)){
+	    section = 5;
+	}
+	else if ((x<=1200) && (y<500)){
+	    section = 6;
+	}
+	else if ((x<=1200) && (y<500)){
+	    section = 7;
+	}
+	else { section = 8;}
+     }
 	
-    }
+	
+
 
     public void die(){
 	alive = false;
+	xcor = -1000;
+	ycor = -1000;
     }
 
     public boolean isBigger(Players x){
@@ -77,7 +92,10 @@ public class MainPlayer implements Players{
 	if (x.getSection() == section){return true;}
 	return false;
     }
-    
+
+
+
+
 
     
 

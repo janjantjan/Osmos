@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class EnemiesPlayer implements Players{
 
     private double speed;
@@ -7,12 +9,19 @@ public class EnemiesPlayer implements Players{
     private boolean alive;
     private int section;
 	
+    private static int randInt(int min, int max){
+	int range = (max - min) + 1;     
+	return (int)(Math.random() * range) + min;
+    }
 
+    
     public EnemiesPlayer(){
 	speed = 2.5;//start at two decrease by 0.05
 	radius = 10;
-	xcor = 50;//to be changed
-	ycor = 50;//to be changed
+	
+	xcor = randInt(5, 1595);
+	ycor = randInt(5, 995);
+	
 	alive = true;
 	section = 2;
     }
@@ -50,23 +59,38 @@ public class EnemiesPlayer implements Players{
     public void moveTo (int x, int y){
 	xcor = x;
 	ycor = y;
-	if ((x<50) && (y<50)){
+	if ((x<=400) && (y<=500)){
 	    section = 1;
 	}
-	else if ((x<100) && (y<50)){
+	else if ((x<=800) && (y<=500)){
 	    section = 2;
 	}
-	else if ((x<50) && (y<100)){
+	else if ((x<=400) && (y<=1000)){
 	    section = 3;
 	}
-	else if ((x<100) && (y<100)){
+	else if ((x<=1200) && (y<500)){
 	    section = 4;
 	}
-	
+	else if ((x<=1200) && (y<500)){
+	    section = 5;
+	}
+	else if ((x<=1200) && (y<500)){
+	    section = 6;
+	}
+	else if ((x<=1200) && (y<500)){
+	    section = 7;
+	}
+	else { section = 8;}
     }
+	
+	
+
 
     public void die(){
 	alive = false;
+	xcor = -2000;
+	ycor = -2000;
+
     }
 
     public boolean isBigger(Players x){
@@ -75,8 +99,8 @@ public class EnemiesPlayer implements Players{
 	return false;
     }
     
-  public boolean nearMe(Players x){
-      if (x.getSection() == section){return true;}
+    public boolean nearMe(Players x){
+	if (x.getSection() == section){return true;}
 	return false;
     }
     
