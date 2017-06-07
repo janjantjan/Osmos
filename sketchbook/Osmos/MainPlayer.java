@@ -1,8 +1,7 @@
-
 public class MainPlayer implements Players{
 
     private double speed;
-    private double radius;
+    private int radius;
     private int xcor;
     private int ycor;
     private int section;
@@ -31,61 +30,58 @@ public class MainPlayer implements Players{
     public int getY(){
 	return ycor;}
 
-    public double getRadius(){
+    public int getRadius(){
 	return radius;}
     
     public double getSpeed(){
 	return speed;}
 
-    public Players eat(Players x){
+    public void eat(Players x){
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount/2;
-	    speed -= amount/5;
-	    x.die();
-	    return x;
-	}
+	    speed -= amount/100;}
 
-	else{
-	    die();
-	    return x;
-	}
+	else{die();}
     }
 	
-     public void moveTo (int x, int y){
-	xcor = x;
-	ycor = y;
-	if ((x<=400) && (y<=500)){
+    public void moveTo (int x, int y){//fix later
+    if(x>xcor){
+      xcor += speed;
+    }
+    else{
+      if(x<xcor){
+        xcor -= speed;
+      }  
+    }
+    if(y>ycor){
+      ycor += speed;
+    }
+    else{
+      if(y<ycor){
+        ycor -= speed;
+      }
+    }
+
+	if ((x<50) && (y<50)){
 	    section = 1;
 	}
-	else if ((x<=800) && (y<=500)){
+	else if ((x<100) && (y<50)){
 	    section = 2;
 	}
-	else if ((x<=400) && (y<=1000)){
+	else if ((x<50) && (y<100)){
 	    section = 3;
 	}
-	else if ((x<=1200) && (y<500)){
+	else if ((x<100) && (y<100)){
 	    section = 4;
 	}
-	else if ((x<=1200) && (y<500)){
-	    section = 5;
-	}
-	else if ((x<=1200) && (y<500)){
-	    section = 6;
-	}
-	else if ((x<=1200) && (y<500)){
-	    section = 7;
-	}
-	else { section = 8;}
-     }
 	
-	
-
+    }
 
     public void die(){
 	alive = false;
-	xcor = -1000;
-	ycor = -1000;
+  xcor = -1000;
+  ycor = -1000;
     }
 
     public boolean isBigger(Players x){
@@ -98,10 +94,7 @@ public class MainPlayer implements Players{
 	if (x.getSection() == section){return true;}
 	return false;
     }
-
-
-
-
+    
 
     
 
