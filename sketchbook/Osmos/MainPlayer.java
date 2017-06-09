@@ -8,6 +8,7 @@ public class MainPlayer implements Players{
     // 1(400, 500) 2(800, 500) 3(1200, 500) 4(1600, 500)
     // 5(400, 1000) 6(400, 1000) 7(1200, 1000) 8(1600, 1000)
     private boolean alive;
+    
 
     public MainPlayer(){
 	speed = 2;
@@ -40,7 +41,7 @@ public class MainPlayer implements Players{
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount/2;
-	    speed -= amount/100;}
+	    speed -= amount/50;}
 
 	else{die();}
     }
