@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MainPlayer implements Players{
 
     private double speed;
@@ -8,6 +10,7 @@ public class MainPlayer implements Players{
     // 1(400, 500) 2(800, 500) 3(1200, 500) 4(1600, 500)
     // 5(400, 1000) 6(400, 1000) 7(1200, 1000) 8(1600, 1000)
     private boolean alive;
+    private int increment;
     
 
     public MainPlayer(){
@@ -17,6 +20,7 @@ public class MainPlayer implements Players{
 	ycor = 500;
 	alive = true;
 	section = 2;
+increment = 0;
 	
        }
     public int getSection(){
@@ -41,14 +45,24 @@ public class MainPlayer implements Players{
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount/2;
-	    speed -= amount/50;}
+	    speed = speed*.9;}
 
 	else{die();}
     }
 	
-    public void moveTo (int x, int y){//fix later
-    if(x>xcor){
-      xcor += speed;
+      public void moveTo (int x, int y){//fix later
+      if (radius >= 20){
+        increment++;
+      if (increment == 100){
+        int part = radius/20;
+      radius-= part;
+    increment = 0;
+    speed *= 1.09;
+      }
+        }
+      
+      if(x>xcor){
+        xcor += speed;
     }
     else{
       if(x<xcor){
