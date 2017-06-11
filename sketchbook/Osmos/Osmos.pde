@@ -25,7 +25,6 @@ void draw(){
       fill(enemies[i].getRed(),enemies[i].getGreen(),enemies[i].getBlue());
   ellipse(enemies[i].getX(),enemies[i].getY(),enemies[i].getRadius(),enemies[i].getRadius());
       
-      
         enemies[i].moveTo();
     }
     for(EnemiesPlayer x: enemies){
@@ -33,5 +32,16 @@ void draw(){
       main.eat(x);
       x.eat(main);
     }
+    
+    if (!main.isAlive()){
+        clear();
+       
+        textSize(150);
+       
+  text("GAME OVER", 500, 500); 
+  fill(255, 8, 8);
+  
+      }
+      
   }
 }
