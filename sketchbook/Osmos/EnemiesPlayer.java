@@ -193,7 +193,7 @@ if(x>xcor){
       if (randomSign == 0){
         randomNum = randomVal * -1;
       return randomNum;}
-        else{ return randomNum;}s
+        else{ return randomNum;}
   }
       
 
