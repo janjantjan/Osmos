@@ -15,6 +15,8 @@ public class EnemiesPlayer implements Players{
     private int green;
     private int blue;
     private int mainSize;
+    private int increment2;
+    private int move;
    
 	
 
@@ -24,6 +26,7 @@ public class EnemiesPlayer implements Players{
 	radius = 10+a.nextInt(mainSize);
 	xcor = a.nextInt(1600);//to be changed
 	ycor = a.nextInt(800);//to be changed
+move = a.nextInt(10) * 7;
 	alive = true;
 	section = 2;
 increment = 0;
@@ -100,7 +103,7 @@ direction = 0;
     public void eat(Players x){
 	if (isBigger(x)){
 	    double amount = x.getRadius();
-	    radius += amount/2;
+	    radius += amount/3;
 	    speed -= 0.05;}
 	else{die();}
     }
@@ -113,7 +116,7 @@ direction = 0;
     if (ycor <= 0){yDir = 1;}
     if (xcor >= 1800){xDir = -1;}
    if(ycor >= 1000){yDir = -1;}
-  if (increment == 50){
+  if (increment == move){
     xDir = randDir();
     yDir = randDir();
     increment = 0 ;
@@ -123,6 +126,15 @@ direction = 0;
     
 }
     public void moveTo (int x, int y){
+      if (radius >= 20){
+        increment2++;}
+      if (increment2 == 100){
+        int part = radius/60;
+      radius-= part;
+    increment2 = 0;
+    speed *= 1.001;
+      }
+      
 if(x>xcor){
       xcor += speed;
     }
@@ -181,7 +193,7 @@ if(x>xcor){
       if (randomSign == 0){
         randomNum = randomVal * -1;
       return randomNum;}
-        else{ return randomNum;}
+        else{ return randomNum;}s
   }
       
 
