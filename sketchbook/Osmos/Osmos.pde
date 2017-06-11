@@ -35,7 +35,6 @@ void draw(){
     
     if (!main.isAlive()){
         clear();
-       
         textSize(150);
        
   text("GAME OVER", 500, 500); 

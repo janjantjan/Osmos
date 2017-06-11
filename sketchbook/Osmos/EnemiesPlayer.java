@@ -19,8 +19,9 @@ public class EnemiesPlayer implements Players{
 	
 
     public EnemiesPlayer(){
+      mainSize = 20;
 	speed = 2.5;//start at two decrease by 0.05
-	radius = 10+a.nextInt(20);
+	radius = 10+a.nextInt(mainSize);
 	xcor = a.nextInt(1600);//to be changed
 	ycor = a.nextInt(800);//to be changed
 	alive = true;
@@ -29,7 +30,7 @@ increment = 0;
 direction = 0;
  xDir = randDir();
      yDir = randDir();
-     mainSize = 20;
+     
      colorCheck();
      
     }
@@ -158,6 +159,8 @@ if(x>xcor){
 	alive = false;
   xcor = -1000;
   ycor = -1000;
+  radius = 10+a.nextInt(mainSize);
+  
     }
 
     public boolean isBigger(Players x){
