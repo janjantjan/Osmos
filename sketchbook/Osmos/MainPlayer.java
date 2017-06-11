@@ -45,7 +45,7 @@ increment = 0;
 	if (isBigger(x)){
 	    double amount = x.getRadius();
 	    radius += amount/2;
-	    speed = speed*.9;}
+	    speed -= speed*.1;}
 
 	else{die();}
     }
@@ -57,7 +57,7 @@ increment = 0;
         int part = radius/20;
       radius-= part;
     increment = 0;
-    speed *= 1.09;
+    speed += speed*.05;
       }
         }
       

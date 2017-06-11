@@ -3,7 +3,7 @@ EnemiesPlayer[] enemies = new EnemiesPlayer[10];
 
 
 void setup(){
-  fullScreen();
+  size(1600,800);
   background(0);
   stroke(219,2,9);
   fill(219,2,9);
@@ -46,16 +46,16 @@ void draw(){
         clear();
         textSize(150);
        
-  text("GAME OVER", 500, 500); 
+  text("GAME OVER", 350, 400); 
   fill(255, 8, 8);
   
       }
       
-      if (main.getRadius() == 50){
+      if (main.getRadius() > 100){
         clear();
         textSize(150);
        
-  text("You Win", 500, 500); 
+  text("You Win", 350, 400); 
   fill(255, 8, 8);
         
       

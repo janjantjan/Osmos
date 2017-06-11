@@ -24,8 +24,8 @@ public class EnemiesPlayer implements Players{
       mainSize = 20;
 	speed = 2.5;//start at two decrease by 0.05
 	radius = 10+a.nextInt(mainSize);
-	xcor = a.nextInt(1600);//to be changed
-	ycor = a.nextInt(800);//to be changed
+	xcor = a.nextInt(1600-(2*radius)) + radius;//to be changed
+	ycor = a.nextInt(800-(2*radius)) + radius;//to be changed
 move = a.nextInt(10) * 7;
 	alive = true;
 	section = 2;
@@ -112,10 +112,10 @@ direction = 0;
 
   public void moveTo(){
     increment ++;
-    if (xcor <= 0){xDir = 1;}
-    if (ycor <= 0){yDir = 1;}
-    if (xcor >= 1800){xDir = -1;}
-   if(ycor >= 1000){yDir = -1;}
+    if (xcor <= radius/2){xDir = 1;}
+    if (ycor <= radius/2){yDir = 1;}
+    if (xcor >= 1600-(radius/2)){xDir = -1;}
+   if(ycor >= 800-(radius/2)){yDir = -1;}
   if (increment == move){
     xDir = randDir();
     yDir = randDir();
@@ -171,7 +171,7 @@ if(x>xcor){
 	alive = false;
   xcor = -1000;
   ycor = -1000;
-  radius = (mainSize/2 + 10)+a.nextInt(mainSize-20);
+  radius = (mainSize/2 + 10)+a.nextInt(20);
   
     }
 
