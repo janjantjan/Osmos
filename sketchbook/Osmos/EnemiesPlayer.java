@@ -100,7 +100,7 @@ direction = 0;
     public void eat(Players x){
 	if (isBigger(x)){
 	    double amount = x.getRadius();
-	    radius += amount;
+	    radius += amount/2;
 	    speed -= 0.05;}
 	else{die();}
     }
@@ -159,7 +159,7 @@ if(x>xcor){
 	alive = false;
   xcor = -1000;
   ycor = -1000;
-  radius = 10+a.nextInt(mainSize);
+  radius = (mainSize/2 + 10)+a.nextInt(mainSize);
   
     }
 
