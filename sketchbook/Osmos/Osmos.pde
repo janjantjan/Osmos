@@ -1,5 +1,7 @@
 MainPlayer main = new MainPlayer();
 EnemiesPlayer[] enemies = new EnemiesPlayer[10];
+
+
 void setup(){
   fullScreen();
   background(0);

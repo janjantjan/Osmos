@@ -7,6 +7,10 @@ public class EnemiesPlayer implements Players{
     private int ycor;
     private boolean alive;
     private int section;
+    private int increment;
+    private int direction;
+    private int xDir ;
+    private int yDir ;
 	
 
     public EnemiesPlayer(){
@@ -16,6 +20,10 @@ public class EnemiesPlayer implements Players{
 	ycor = a.nextInt(800);//to be changed
 	alive = true;
 	section = 2;
+increment = 0;
+direction = 0;
+ xDir = randDir();
+     yDir = randDir();
     }
     public void setX(int x){
       xcor = x;
@@ -53,8 +61,23 @@ public class EnemiesPlayer implements Players{
 	    speed -= 0.05;}
 	else{die();}
     }
-	  public void moveTo(){
-  moveTo(a.nextInt(1600),a.nextInt(800));
+	  
+
+
+  public void moveTo(){
+    increment ++;
+    if (xcor <= 0){xDir = 1;}
+    if (ycor <= 0){yDir = 1;}
+    if (xcor >= 1800){xDir = -1;}
+   if(ycor >= 1000){yDir = -1;}
+  if (increment == 50){
+    xDir = randDir();
+    yDir = randDir();
+    increment = 0 ;
+  }
+  else{ 
+    moveTo(xcor+xDir, ycor+yDir);}
+    
 }
     public void moveTo (int x, int y){
 if(x>xcor){
@@ -105,9 +128,17 @@ if(x>xcor){
       if (x.getSection() == section){return true;}
 	return false;
     }
-    
-
-    
+      
+  private int randDir() {
+      int randomNum = 1;
+      int randomVal = a.nextInt(2);
+      int randomSign = a.nextInt(2);
+      if (randomSign == 0){
+        randomNum = randomVal * -1;
+      return randomNum;}
+        else{ return randomNum;}
+  }
+      
 
     
 }
