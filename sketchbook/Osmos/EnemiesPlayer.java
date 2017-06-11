@@ -171,7 +171,7 @@ if(x>xcor){
 	alive = false;
   xcor = -1000;
   ycor = -1000;
-  radius = (mainSize/2 + 10)+a.nextInt(mainSize);
+  radius = (mainSize/2 + 10)+a.nextInt(mainSize-20);
   
     }
 

@@ -13,11 +13,16 @@ void setup(){
   }
 }
 void draw(){
+  
+  
   stroke(141,54,167);
   fill(141,54,167);
   background(0);
+  
   ellipse(main.getX(),main.getY(),main.getRadius(),main.getRadius());
   main.moveTo(mouseX,mouseY);
+
+    
      
         for(int i = 0; i < enemies.length; i++){
     enemies[i].setMainSize(main.getRadius());
@@ -31,7 +36,11 @@ void draw(){
         if(x.getX() > main.getX()-main.getRadius()+5 && x.getX() < main.getX()+main.getRadius()-5 && x.getY() > main.getY()-main.getRadius()+5 && x.getY() < main.getY()+main.getRadius()-5){
       main.eat(x);
       x.eat(main);
+        //textSize(15);
+       //fill(255, 255, 255);
+ // text("Current Radius: " + main.getRadius(), 1500, 50); 
     }
+    
     
     if (!main.isAlive()){
         clear();
@@ -52,4 +61,6 @@ void draw(){
       
   }
       }
+      
+  
 }
