@@ -11,6 +11,11 @@ public class EnemiesPlayer implements Players{
     private int direction;
     private int xDir ;
     private int yDir ;
+    private int red;
+    private int green;
+    private int blue;
+    private int mainSize;
+   
 	
 
     public EnemiesPlayer(){
@@ -24,7 +29,44 @@ increment = 0;
 direction = 0;
  xDir = randDir();
      yDir = randDir();
+     mainSize = 20;
+     colorCheck();
+     
     }
+    
+    public int getRed(){
+      return red;
+    }
+    
+    public int getGreen(){
+      return green;
+    }
+    
+    public int getBlue(){
+      return blue;
+    }
+      
+      public void setMainSize(int x){
+        mainSize = x;}
+    
+    private void colorCheck(){
+  if ( mainSize - 3 >= radius){
+       red = 237;
+       green = 203;
+       blue = 29;
+     }
+     if ( mainSize >= radius){
+       red = 237;
+       green = 147;
+       blue = 29;
+     }
+     else{
+       red= 219;
+       green = 2;
+       blue = 9;
+     }
+}
+    
     public void setX(int x){
       xcor = x;
     }
@@ -109,7 +151,7 @@ if(x>xcor){
   else if ((x<100) && (y<100)){
       section = 4;
   }
-  
+  colorCheck();
     }
 
     public void die(){
