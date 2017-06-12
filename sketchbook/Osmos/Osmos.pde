@@ -1,5 +1,5 @@
 MainPlayer main = new MainPlayer();
-EnemiesPlayer[] enemies = new EnemiesPlayer[10];
+ArrayList<EnemiesPlayer> enemies = new ArrayList<EnemiesPlayer>();
 ArrayList<EnemiesPlayer> sec1 = new ArrayList<EnemiesPlayer>();
 ArrayList<EnemiesPlayer> sec2 = new ArrayList<EnemiesPlayer>();
 ArrayList<EnemiesPlayer> sec3 = new ArrayList<EnemiesPlayer>();
@@ -10,9 +10,10 @@ void setup(){
   background(0);
   stroke(219,2,9);
   fill(219,2,9);
-  for(int i = 0; i < enemies.length; i++){
-    enemies[i] = new EnemiesPlayer();
-    ellipse(enemies[i].getX(),enemies[i].getY(),enemies[i].getRadius(),enemies[i].getRadius());
+  for(int i = 0; i < 10; i++){
+    EnemiesPlayer a = new EnemiesPlayer();
+    enemies.add(a);  
+    ellipse(enemies.get(i).getX(),enemies.get(i).getY(),enemies.get(i).getRadius(),enemies.get(i).getRadius());
   }
 }
 void draw(){
@@ -24,16 +25,19 @@ void draw(){
   
   ellipse(main.getX(),main.getY(),main.getRadius(),main.getRadius());
   main.moveTo(mouseX,mouseY);
-
+  for(int l = 0;l < main.getList().size(); l ++){
+    enemies.add(main.getList().get(l));
+    main.getList().remove(l);
+  }
     
      
-        for(int i = 0; i < enemies.length; i++){
-    enemies[i].setMainSize(main.getRadius());
-       stroke(enemies[i].getRed(),enemies[i].getGreen(),enemies[i].getBlue());
-        fill(enemies[i].getRed(),enemies[i].getGreen(),enemies[i].getBlue());
-    ellipse(enemies[i].getX(),enemies[i].getY(),enemies[i].getRadius(),enemies[i].getRadius());
+        for(int i = 0; i < enemies.size(); i++){
+    enemies.get(i).setMainSize(main.getRadius());
+       stroke(enemies.get(i).getRed(),enemies.get(i).getGreen(),enemies.get(i).getBlue());
+        fill(enemies.get(i).getRed(),enemies.get(i).getGreen(),enemies.get(i).getBlue());
+    ellipse(enemies.get(i).getX(),enemies.get(i).getY(),enemies.get(i).getRadius(),enemies.get(i).getRadius());
         
-          enemies[i].moveTo();
+          enemies.get(i).moveTo();
       }
       sec1.clear();
       sec2.clear();

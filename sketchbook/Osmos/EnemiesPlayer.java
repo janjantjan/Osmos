@@ -37,6 +37,23 @@ direction = 0;
      colorCheck();
      
     }
+    public EnemiesPlayer(int x, int y){
+      mainSize = 20;
+  speed = 2.5;//start at two decrease by 0.05
+  radius = 2;
+  xcor = x;//to be changed
+  ycor = y;//to be changed
+move = a.nextInt(10) * 7;
+  alive = true;
+  section = 2;
+increment = 0;
+direction = 0;
+ xDir = randDir();
+     yDir = randDir();
+     
+     colorCheck();
+     
+    }
     
     public int getRed(){
       return red;
@@ -54,7 +71,7 @@ direction = 0;
         mainSize = x;}
     
     private void colorCheck(){
-  if ( mainSize - 3 >= radius){
+  if ( mainSize - 6 >= radius){
        red = 237;
        green = 203;
        blue = 29;
@@ -98,6 +115,10 @@ direction = 0;
 
     public double getSpeed(){
 	return speed;
+    }
+    
+    public void setRadius(int x){
+      radius = x;
     }
 
     public void eat(Players x){
@@ -168,9 +189,9 @@ if(x>xcor){
     }
 
     public void die(){
-	alive = false;
-  xcor = -1000;
-  ycor = -1000;
+	//alive = false;
+  xcor = -1000 - a.nextInt(100);
+  ycor = -1000 - a.nextInt(100);
   radius = (mainSize/2 + 10)+a.nextInt(20);
   
     }
