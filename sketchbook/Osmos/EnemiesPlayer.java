@@ -152,16 +152,16 @@ if(x>xcor){
       }
     }
 
-  if ((x<50) && (y<50)){
+  if ((x<800) && (y<400)){
       section = 1;
   }
-  else if ((x<100) && (y<50)){
+  else if ((x<1600) && (y<400)){
       section = 2;
   }
-  else if ((x<50) && (y<100)){
+  else if ((x<800) && (y<800)){
       section = 3;
   }
-  else if ((x<100) && (y<100)){
+  else if ((x<1600) && (y<800)){
       section = 4;
   }
   colorCheck();

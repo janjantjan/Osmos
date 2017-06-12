@@ -33,6 +33,8 @@ void draw(){
           enemies[i].moveTo();
       }
       for(EnemiesPlayer x: enemies){
+        fill(255, 8, 8);
+        text(x.getSection()+ "",x.getX(),x.getY());
         if(x.getX() > main.getX()-main.getRadius()+5 && x.getX() < main.getX()+main.getRadius()-5 && x.getY() > main.getY()-main.getRadius()+5 && x.getY() < main.getY()+main.getRadius()-5){
       main.eat(x);
       x.eat(main);
@@ -62,5 +64,4 @@ void draw(){
   }
       }
       
-  
 }
