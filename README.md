@@ -4,12 +4,17 @@ Final Project 2017 (Bermet and Janice Pd.9)
 FEATURES
 -------------------------------------------------------------------------------
 Main Player's object follows mouse movements
+
 As Main Player moves it loses mass
+
 Main Player gains size and slows down as it eats
+
 Enemies move randomly accross the speed and respawn according to the size of the Main Player
+
 Enemy players change color based on Main Player's size
    - Yellow is safe to eat
    - Red is not safe to eat
+
 GAME OVER screen when Main Player dies.
 YOU WIN! screen comes up after Main Player gets to a certain size.
 
@@ -17,7 +22,7 @@ BUGS
 -------------------------------------------------------------------------------
 Sometimes (near the beggining) yellow enemies close enought to the Main Player's size may kill you.
 After Main Player gets to a certain size... it goes rogue and does not follow mouse coordinates. (solved this with the YOU WIN! screen)
-
+The YOU WIN! screen is also used when the game breaks itself (Some objects get too large)
 
 DEVELOPMENT LOG
 -------------------------------------------------------------------------------
