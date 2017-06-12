@@ -190,9 +190,16 @@ if(x>xcor){
 
     public void die(){
 	//alive = false;
+  if(a.nextInt(2) == 0){
   xcor = -1000 - a.nextInt(100);
   ycor = -1000 - a.nextInt(100);
   radius = (mainSize/2 + 10)+a.nextInt(20);
+  }
+  else{
+    xcor = 1000 + a.nextInt(100);
+  ycor = 1000 + a.nextInt(100);
+  radius = (mainSize/2 + 10)+a.nextInt(20);
+  }
   
     }
 

@@ -93,12 +93,12 @@ increment = 0;
       
 
     increment = 0;
-    speed += speed*.02;
+    speed += speed*.019;
     //int slow = 0;
     //if(slow < 10){
     //  if(slow == 1){
     EnemiesPlayer a = new EnemiesPlayer(newX,newY);
-      a.setRadius(2);
+      a.setRadius(radius/20);
       newEnemies.add(a);
       //}
       //slow++;
